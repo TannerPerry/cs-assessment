@@ -28,15 +28,35 @@ let myStr = "The quick brown fox jumped over the lazy dog"
   console.log(findLongestWord(myStr))
 
   function pangram(str){
+      str = str.toLowerCase()
     const alphabet = 'abcdefghijklmnopqrstuvwxyz'
-    const alphArr = alphabet.split()
+    const alphArr = alphabet.split('')
+    let allLet = false
     for(let i = 0; i < alphArr.length; i++) {
         if(str.includes(alphArr[i])){
-            return false
+            allLet =  true
         } else {
-            return true
+            allLet = false
         }
+       
     }
+    return allLet
+
   }
 
   console.log(pangram(myStr))
+
+  function uniquChar(str){
+    let len = str.length
+    if(len > 26){
+        return false
+    }
+    for(let i = 0; i < str.length; i++) {
+        if(str.lastIndexOf(str[i]) !== i) {
+            return false;
+        }
+    }
+    return true
+
+  }
+  console.log(uniquChar(myStr))
