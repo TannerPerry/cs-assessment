@@ -26,3 +26,17 @@ function findLongestWord(str) {
 let myStr = "The quick brown fox jumped over the lazy dog"
 
   console.log(findLongestWord(myStr))
+
+  function pangram(str){
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    const alphArr = alphabet.split()
+    for(let i = 0; i < alphArr.length; i++) {
+        if(str.includes(alphArr[i])){
+            return false
+        } else {
+            return true
+        }
+    }
+  }
+
+  console.log(pangram(myStr))
